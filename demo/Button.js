@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     margin: 5,
     borderColor: 'gray',
     borderWidth: 1,
+    borderRadius: 5,
     backgroundColor: 'gray',
   },
   buttonDisabled: {
@@ -43,5 +44,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
+    alignSelf: 'center',
   }
 })
