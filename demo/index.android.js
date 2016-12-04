@@ -47,6 +47,16 @@ class ProgressBar extends Component {
   }
 }
 
+class MainScene extends Component {
+  render() {
+    return (
+      <View style={{flex: 1, justifyContent: 'center'}}>
+        <Text style={{fontSize: 30, alignSelf: 'center'}}>{'hello, react native.'}</Text>
+      </View>
+    )
+  }
+}
+
 class WelcomeUI extends Component {
   constructor(props) {
     super(props);
@@ -72,7 +82,7 @@ class WelcomeUI extends Component {
   }
 
   onClick() {
-
+    this.props.navigator.push({name: 'main', component: MainScene, params: this.params});
   }
 
   onPageScroll(event) {
@@ -84,7 +94,6 @@ class WelcomeUI extends Component {
   }
 
   render() {
-    const thunbsUp = '\uD83D\uDC4D';
     let pages = [];
     for (let i = 0; i < PAGES; i++) {
       let pageStyle = {
@@ -110,7 +119,7 @@ class WelcomeUI extends Component {
             />
             <LikeCount />
             <TouchableOpacity onPress={this.onClick.bind(this)} style={styles.startupButton}>
-              <Text style={styles.likesText}>{thunbsUp + '启动首页'}</Text>
+              <Text style={styles.likesText}>{'启动首页'}</Text>
             </TouchableOpacity>
           </View>
         )
@@ -204,8 +213,9 @@ var styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   image: {
+    flex: 1,
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height - 130,
+    // height: Dimensions.get('window').height - 160,
   },
   progressBarContainer: {
     height: 10,

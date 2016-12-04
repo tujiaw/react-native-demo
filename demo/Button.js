@@ -31,7 +31,6 @@ export default class Button extends Component {
 const styles = StyleSheet.create({
   button: {
     flex: 1,
-    width: 0,
     margin: 5,
     borderColor: 'gray',
     borderWidth: 1,
